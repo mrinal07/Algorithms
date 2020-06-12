@@ -1,6 +1,6 @@
 package com.DSA.Data_Structures.Arrays;
 
-public class Reversal_Array
+public class Reversal_Array_Rotation
 {
 	public static void main(String[] args) 
 	{
