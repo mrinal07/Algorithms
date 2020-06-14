@@ -9,9 +9,14 @@ public class Reversal_Array_Rotation
 		int n = arr.length;
 		k=k%n;
 	// when value of k is greater than size of an array ,then using modulo we can iterate back to zero		
+		// ***** Left Rotation *****
 		reversal( arr , 0 , k-1 );
 		reversal( arr , k , n-1 );
 		reversal( arr , 0 , n-1 );
+		//***** Right rotation *****
+		/*reverseArray(arr, 0, n - 1); 
+                reverseArray(arr, 0, d - 1); 
+                reverseArray(arr, d, n - 1); */
 		
 		for(int i=0 ; i<n; i++)
 			System.out.print(arr[i]);
@@ -28,5 +33,5 @@ public class Reversal_Array_Rotation
 			start++;
 			end--;
 		}
-	}	
+	}
 }
