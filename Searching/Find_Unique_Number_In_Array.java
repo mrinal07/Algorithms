@@ -30,16 +30,16 @@ class Find_Unique_Number_In_Array
 			if( mid %2 == 0)
 			{
 				if( arr[mid+1] == arr[mid]  )
-					return BS(arr,mid+2,end);
+				       return BS(arr,mid+2,end);
 				else
-					return BS(arr,start,mid);
+				       return BS(arr,start,mid);
 			}
 			else
 			{
 				if( arr[mid-1] == arr[mid]  )
-					return BS(arr,mid+1,end);
+				       return BS(arr,mid+1,end);
 				else
-					return BS(arr,start,mid-1);
+				       return BS(arr,start,mid-1);
 			}
 		}
 		return -1;
