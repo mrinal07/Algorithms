@@ -8,7 +8,8 @@ public class Binary_Search
 		int n = arr.length;
 		int find = 55;
 		
-//		binarySearch(arr,n,find);
+//		binarySearch(arr,n,find);  //  Iterative
+
 		int ans = binaryRecursiveSearch(arr,0,n-1,find);
 		if(ans == -1)
 			System.out.println("Not found!");		    
