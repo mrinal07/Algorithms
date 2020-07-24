@@ -7,6 +7,7 @@ import java.util.Arrays;
  *a specific range. It works by counting the number of objects
  *having distinct key values (kind of hashing). Then doing some
  *arithmetic to calculate the position of each object in the output sequence.*/
+
 public class Counting_Sort 
 {
 	public static void main(String[] args) 
@@ -41,7 +42,7 @@ public class Counting_Sort
 		
 		int new_arr[] = new int[ arr.length ];
 		
-		for( int i=0 ; i<new_arr.length ; i++ )
+		for( int i=new_arr.length-1 ; i>=0 ; i-- )
 		{
 			new_arr[ countArray[ arr[ i ] ]-1   ] = arr[i];// fetching from countArray => new_array
 			--countArray[ arr[i] ]; 
@@ -72,7 +73,7 @@ public class Counting_Sort
 		
 		int new_arr[] = new int[ arr.length ]; 
 		
-		for(int i=0 ; i<arr.length ; i++)  // fetching from countArray => new_array
+		for(int i=arr.length-1 ; i>=0 ; i--)  // fetching from countArray => new_array
 		{
 			new_arr[ countArray[ arr[i] - min ] -1 ] = arr[i]; 
 			countArray[ arr[i]-min ]--;
