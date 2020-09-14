@@ -1,0 +1,45 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if (headA == null || headB == null) return null;
+        ListNode ptr = headA;
+        
+        while( ptr.next !=null ) // traverse first LL till end
+            ptr = ptr.next;
+         
+        ptr.next = headB; // attach second LL head to the tail of first LL
+        
+        ListNode slow = headA,fast = headA; // FLoyds
+        ListNode startOfHeadA = null;  // ptr points to head of first LL        
+        
+        while( fast != null && fast.next != null ){
+            
+            slow = slow.next;
+            fast = fast.next.next;
+            
+            if( fast == slow ){
+                
+                startOfHeadA = headA;
+                while( startOfHeadA != slow ){       // now check these pointers when they points to same node condt breaks
+                      startOfHeadA = startOfHeadA.next;//
+                      slow = slow.next;
+                }
+                break; 
+            }               
+                          // if both points to same break            
+        }
+        
+        ptr.next = null; // make this LL original one
+        return startOfHeadA; // return the same node
+    }
+}
